@@ -1,0 +1,66 @@
+{
+    "title" : {
+        "provider" : "pl_PL/Text::realText",
+        "length" : 100
+    },
+    "content" : {
+        "provider" : "Lorem::text",
+        "length" : 300
+    },
+    "email" : {
+        "provider" : "Internet::safeEmail"
+    },
+    "first_name" : {
+        "provider" : "pl_PL/Person::firstName"
+    },
+    "last_name" : {
+        "provider" : "pl_PL/Person::lastName"
+    },
+    "address" : {
+        "provider" : "Address::address"
+    },
+    "date_of_birth" : {
+        "provider" : "DateTime::date",
+        "format" : "Y-m-d"
+    },
+    "company" : {
+        "provider" : "pl_PL/Company::company"
+    },
+    "phone_number" : {
+        "provider" : "pl_PL/PhoneNumber::phoneNumber"
+    },
+    "number_of_cars" : {
+        "provider" : "Base::randomNumber",
+        "from" : 0,
+        "to" : 3
+    },
+    "homepage" : {
+        "provider" : "Internet::domainName"
+    },
+    "last_visited_page" : {
+        "provider" : "Internet::url"
+    },
+    "user_agent" : {
+        "provider" : "UserAgent::userAgent"
+    },
+    "color" : {
+        "provider" : "Color::hexcolor"
+    },
+    "picture" : {
+        "provider" : "Image::image",
+        "dir" : "/tmp",
+        "width" : 200,
+        "height" : 200
+    },
+    "background" : {
+        "provider" : "Image::imageUrl",
+        "width" : 800,
+        "height" : 600
+    },
+    "password_hash" : {
+        "provider" : "Miscellaneous::sha1"
+    },
+    "locale" : {
+        "provider" : "Miscellaneous::locale"
+    }
+}
