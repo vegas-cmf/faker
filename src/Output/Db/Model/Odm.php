@@ -10,18 +10,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Vegas\Tool\Faker\Output\File;
+namespace Vegas\Tool\Faker\Output\Db\Model;
 
-use Vegas\Tool\Faker\Output\File;
-use Vegas\Tool\Faker\Output\OutputTypeInterface;
-
-class Csv extends File implements OutputTypeInterface
+class Odm extends \Vegas\Db\Decorator\CollectionAbstract
 {
-    const DELIMITER = ';';
-
-    public function store(array $data = array())
+    public function setSource($source)
     {
-        fputcsv($this->handle, array_values($data), self::DELIMITER, '"');
+        parent::setSource($source);
     }
 }
- 

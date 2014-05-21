@@ -8,8 +8,11 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- */ 
-class ODM extends \Vegas\Db\Decorator\CollectionAbstract
+ */
+
+namespace Vegas\Tool\Faker\Output\Db;
+
+class Odm extends \Vegas\Tool\Faker\Output\Db
 {
 
 }

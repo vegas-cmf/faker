@@ -8,8 +8,11 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- */ 
-class ORM extends \Vegas\Db\Decorator\ModelAbstract
+ */
+
+namespace Vegas\Tool\Faker\Output\Db;
+
+class Orm extends \Vegas\Tool\Faker\Output\Db
 {
 
 }
