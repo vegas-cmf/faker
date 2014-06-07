@@ -15,8 +15,16 @@ namespace Vegas\Tool\Faker\Output\File;
 use Vegas\Tool\Faker\Output\File;
 use Vegas\Tool\Faker\Output\OutputTypeInterface;
 
+/**
+ * Class Xml
+ * @package Vegas\Tool\Faker\Output\File
+ */
 class Xml extends File implements OutputTypeInterface
 {
+
+    /**
+     * @return mixed|void
+     */
     public function init()
     {
         $xmlString = <<<XML
@@ -26,6 +34,10 @@ XML;
         $this->handle = new \SimpleXMLElement($xmlString);
     }
 
+    /**
+     * @param array $data
+     * @return mixed|void
+     */
     public function store(array $data = array())
     {
         $node = $this->handle->addChild('data');
@@ -34,6 +46,9 @@ XML;
         }
     }
 
+    /**
+     *
+     */
     public function finalize()
     {
         $this->handle->asXML($this->destination);

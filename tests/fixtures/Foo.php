@@ -4,20 +4,19 @@
  *
  * @author Slawomir Zytko <slawomir.zytko@gmail.com>
  * @copyright Amsterdam Standard Sp. Z o.o.
- * @homepage https://github.com/vegas-cmf
+ * @homepage http://vegas-cmf.github.io
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
- */
+ */ 
 
-namespace Vegas\Tool\Faker\Output\Db;
+namespace Faker\Provider;
 
-/**
- * Class Odm
- * @package Vegas\Tool\Faker\Output\Db
- */
-class Odm extends \Vegas\Tool\Faker\Output\Db
+class Foo extends \Faker\Provider\Base
 {
-
+    public function boolean()
+    {
+        return (boolean) rand(0, 1);
+    }
 }
  

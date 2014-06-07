@@ -12,8 +12,16 @@
 
 namespace Vegas\Tool\Faker\Output\Db\Model;
 
+/**
+ * Class Odm
+ * @package Vegas\Tool\Faker\Output\Db\Model
+ */
 class Odm extends \Vegas\Db\Decorator\CollectionAbstract
 {
+    /**
+     * @param $source
+     * @return \Phalcon\Mvc\Collection|void
+     */
     public function setSource($source)
     {
         parent::setSource($source);

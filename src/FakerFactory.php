@@ -14,10 +14,26 @@ namespace Vegas\Tool\Faker;
 
 use Faker\Factory;
 
+/**
+ * Class FakerFactory
+ * @package Vegas\Tool\Faker
+ */
 class FakerFactory extends Factory
 {
+    /**
+     * Array of data class providers
+     *
+     * @var array
+     */
     protected static $providersProxy = array();
 
+    /**
+     * Prepares data providers defined in specification file
+     *
+     * @param $spec
+     * @param string $locale
+     * @return \Faker\Generator
+     */
     public static function createFromSpec($spec, $locale = self::DEFAULT_LOCALE)
     {
         $faker = self::create($locale);
@@ -32,24 +48,36 @@ class FakerFactory extends Factory
         return $faker;
     }
 
+    /**
+     * Extracts provider class name, method and parameters
+     *
+     * @param $providerConfig
+     * @return ProviderProxy
+     */
     protected static function extractProvider($providerConfig)
     {
         $providerName = $providerConfig['provider'];
+        //extracts locale
         if (strpos($providerName, '/') !== false) {
-            $providerSplittedName = explode('/', $providerName);
-            $locale = $providerSplittedName[0];
-            $providerName = $providerSplittedName[1];
+            $providerSplitName = explode('/', $providerName);
+            $locale = $providerSplitName[0];
+            $providerName = $providerSplitName[1];
         } else {
             $locale = self::DEFAULT_LOCALE;
         }
-        $providerSplittedName = explode('::', $providerName);
-        $providerName = $providerSplittedName[0];
-        $providerFunction = $providerSplittedName[1];
+        //extracts class and method name
+        $providerSplitName = explode('::', $providerName);
+        $providerName = $providerSplitName[0];
+        $providerFunction = $providerSplitName[1];
 
+        //finds the full provider class name
         $providerClassName = self::getProviderClassname($providerName, $locale);
 
+        //provider name is defined in the same array with parameters
+        //$providerConfig should contain only parameters that will be passed to method
         unset($providerConfig['provider']);
 
+        //creates provider proxy
         $providerProxy = new ProviderProxy($providerClassName, $providerFunction, $providerConfig);
         return $providerProxy;
     }

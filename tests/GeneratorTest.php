@@ -134,5 +134,28 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame(5, intval(OrmModel::count()));
     }
+
+    public function testCustomProvider()
+    {
+        require dirname(__FILE__) . '/fixtures/Foo.php';
+        $path = dirname(__FILE__) . '/fixtures/foospec.json';
+        $outputPath = dirname(__FILE__) . '/fixtures/foo.json';
+        @unlink($outputPath);
+
+        $generator = new Generator();
+        $generator->setSpecFilePath($path);
+        $generator->setAdapter('file');
+        $generator->setAdapterType('json');
+        $generator->setCount(10);
+        $generator->setDestination($outputPath);
+        $generator->addCustomProvider('\Faker\Provider\Foo');
+
+        $generator->generate();
+
+        $foo = json_decode(file_get_contents($outputPath), true);
+        $this->assertSame(10, count($foo));
+        $this->assertEquals(file_get_contents($outputPath), json_encode($foo));
+        $this->assertTrue(in_array('bool', array_keys($foo)));
+    }
 }
  

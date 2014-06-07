@@ -14,12 +14,38 @@ namespace Vegas\Tool\Faker;
 
 use Vegas\Tool\Faker\Exception\UnableProviderInstantiateException;
 
+/**
+ * Class ProviderProxy
+ * @package Vegas\Tool\Faker
+ */
 class ProviderProxy
 {
+    /**
+     * The name of class that provides data
+     *
+     * @var
+     */
     private $providerClassName;
+
+    /**
+     * The name of class's method that generates data
+     *
+     * @var
+     */
     private $providerFunction;
+
+    /**
+     * Parameters of method
+     *
+     * @var
+     */
     private $providerParameters;
 
+    /**
+     * @param $providerClassName
+     * @param $providerFunction
+     * @param $providerParameters
+     */
     public function __construct($providerClassName, $providerFunction, $providerParameters)
     {
         $this->providerClassName = $providerClassName;
@@ -27,11 +53,21 @@ class ProviderProxy
         $this->providerParameters = $providerParameters;
     }
 
+    /**
+     * @return mixed
+     */
     public function getProviderClassName()
     {
         return $this->providerClassName;
     }
 
+    /**
+     * Creates an instance of provider
+     *
+     * @param \Faker\Generator $faker
+     * @return object
+     * @throws Exception\UnableProviderInstantiateException
+     */
     public function instantiateProvider(\Faker\Generator $faker)
     {
         try {
@@ -42,9 +78,18 @@ class ProviderProxy
         }
     }
 
+    /**
+     * Invokes method on instantiated provider
+     *
+     * @param \Faker\Generator $faker
+     * @return mixed
+     */
     public function invoke(\Faker\Generator $faker)
     {
-        return call_user_func_array(array($faker, $this->providerFunction), array_values($this->providerParameters));
+        return call_user_func_array(
+            array($faker, $this->providerFunction),
+            array_values($this->providerParameters)
+        );
     }
 }
  

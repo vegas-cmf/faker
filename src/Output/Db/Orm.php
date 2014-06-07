@@ -12,6 +12,10 @@
 
 namespace Vegas\Tool\Faker\Output\Db;
 
+/**
+ * Class Orm
+ * @package Vegas\Tool\Faker\Output\Db
+ */
 class Orm extends \Vegas\Tool\Faker\Output\Db
 {
 

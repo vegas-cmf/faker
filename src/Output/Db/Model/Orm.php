@@ -12,8 +12,16 @@
 
 namespace Vegas\Tool\Faker\Output\Db\Model;
 
+/**
+ * Class Orm
+ * @package Vegas\Tool\Faker\Output\Db\Model
+ */
 class Orm extends \Vegas\Db\Decorator\ModelAbstract
 {
+    /**
+     * @param $source
+     * @return \Phalcon\Mvc\Model|void
+     */
     public function setSource($source)
     {
         parent::setSource($source);

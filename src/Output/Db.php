@@ -14,6 +14,10 @@ namespace Vegas\Tool\Faker\Output;
 
 use Vegas\Tool\Faker\OutputAbstract;
 
+/**
+ * Class Db
+ * @package Vegas\Tool\Faker\Output
+ */
 abstract class Db extends OutputAbstract
 {
     protected $model;
@@ -31,6 +35,7 @@ abstract class Db extends OutputAbstract
 
     /**
      * @param array $data
+     * @return mixed|void
      */
     public function store(array $data = array())
     {

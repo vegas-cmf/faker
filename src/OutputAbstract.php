@@ -12,8 +12,10 @@
 
 namespace Vegas\Tool\Faker;
 
-use Vegas\Tool\Faker\Output\OutputTypeInterface;
-
+/**
+ * Class OutputAbstract
+ * @package Vegas\Tool\Faker
+ */
 abstract class OutputAbstract
 {
     /**
@@ -22,6 +24,9 @@ abstract class OutputAbstract
     protected $destination;
 
     /**
+     * Sets the destination for generated data
+     * It can be a file path or database table/collection
+     *
      * @param $dest
      */
     public function setDestination($dest)
@@ -30,12 +35,23 @@ abstract class OutputAbstract
     }
 
     /**
+     * Some initialization for output
+     *
      * @return mixed
      */
     abstract public function init();
 
+    /**
+     * Stores generated data
+     *
+     * @param array $data
+     * @return mixed
+     */
     abstract public function store(array $data = array());
 
+    /**
+     * Finalizes data generation
+     */
     public function finalize()
     {
 

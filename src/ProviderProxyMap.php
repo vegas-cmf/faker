@@ -15,7 +15,7 @@ namespace Vegas\Tool\Faker;
 /**
  * Class ProviderProxyMap
  *
- * Simple map for storing provider proxies
+ * Simple map for storing providers proxy
  *
  * @package Vegas\Tool\Faker
  */

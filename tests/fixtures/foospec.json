@@ -1,0 +1,5 @@
+{
+    "bool" : {
+        "provider" : "Foo::boolean"
+    }
+}

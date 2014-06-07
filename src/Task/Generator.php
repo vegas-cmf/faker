@@ -55,7 +55,15 @@ class Generator extends \Vegas\Cli\Task
         $count = $this->getOption('c');
 
         $generator = new \Vegas\Tool\Faker\Generator();
+        $generator->setDestination($dest);
+        $generator->setSpecFilePath($spec);
+        $generator->setCount($count);
 
+        $outputParts = explode('.', $output);
+        $generator->setAdapter($outputParts[0]);
+        $generator->setAdapterType($outputParts[1]);
+
+        $generator->generate();
     }
 }
  

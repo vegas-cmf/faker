@@ -12,8 +12,16 @@
 
 namespace Vegas\Tool\Faker\Output;
 
+/**
+ * Interface OutputTypeInterface
+ * @package Vegas\Tool\Faker\Output
+ */
 interface OutputTypeInterface
 {
+    /**
+     * @param array $data
+     * @return mixed
+     */
     public function store(array $data);
 }
  

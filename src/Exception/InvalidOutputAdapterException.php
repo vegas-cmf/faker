@@ -14,6 +14,10 @@ namespace Vegas\Tool\Faker\Exception;
 
 use Vegas\Tool\Faker\Exception as FakerException;
 
+/**
+ * Class InvalidOutputAdapterException
+ * @package Vegas\Tool\Faker\Exception
+ */
 class InvalidOutputAdapterException extends FakerException
 {
     protected $message = 'Invalid output adapter';

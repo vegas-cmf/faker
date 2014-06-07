@@ -14,6 +14,10 @@ namespace Vegas\Tool\Faker\Output;
 
 use Vegas\Tool\Faker\OutputAbstract;
 
+/**
+ * Class File
+ * @package Vegas\Tool\Faker\Output
+ */
 abstract class File extends OutputAbstract
 {
     /**
