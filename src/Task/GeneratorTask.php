@@ -1,8 +1,4 @@
 <?php
-use Vegas\Cli\Task\Action;
-use Vegas\Cli\Task\Option;
-use Vegas\Tool\Faker\Exception\InvalidOutputAdapterException;
-
 /**
  * This file is part of Vegas package
  *
@@ -14,7 +10,15 @@ use Vegas\Tool\Faker\Exception\InvalidOutputAdapterException;
  * file that was distributed with this source code.
  */
 
-class Generator extends \Vegas\Cli\Task
+namespace Vegas\Tool\Faker\Task;
+
+use Vegas\Cli\Task\Action;
+use Vegas\Cli\Task\Option;
+
+/**
+ * Class GeneratorTask
+ */
+class GeneratorTask extends \Vegas\Cli\Task
 {
 
     /**
