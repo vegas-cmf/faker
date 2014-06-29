@@ -30,7 +30,7 @@
         "provider" : "pl_PL/PhoneNumber::phoneNumber"
     },
     "number_of_cars" : {
-        "provider" : "Base::randomNumber",
+        "provider" : "Base::numberBetween",
         "from" : 0,
         "to" : 3
     },
