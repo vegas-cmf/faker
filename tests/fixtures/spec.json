@@ -1,6 +1,6 @@
 {
     "title" : {
-        "provider" : "pl_PL/Text::realText",
+        "provider" : "en_US/Text::realText",
         "length" : 100
     },
     "content" : {
@@ -11,10 +11,10 @@
         "provider" : "Internet::safeEmail"
     },
     "first_name" : {
-        "provider" : "pl_PL/Person::firstName"
+        "provider" : "en_US/Person::firstName"
     },
     "last_name" : {
-        "provider" : "pl_PL/Person::lastName"
+        "provider" : "en_US/Person::lastName"
     },
     "address" : {
         "provider" : "Address::address"
@@ -24,10 +24,10 @@
         "format" : "Y-m-d"
     },
     "company" : {
-        "provider" : "pl_PL/Company::company"
+        "provider" : "en_US/Company::company"
     },
     "phone_number" : {
-        "provider" : "pl_PL/PhoneNumber::phoneNumber"
+        "provider" : "en_US/PhoneNumber::phoneNumber"
     },
     "number_of_cars" : {
         "provider" : "Base::numberBetween",

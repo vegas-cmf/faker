@@ -53,6 +53,8 @@ class GeneratorTask extends \Vegas\Cli\Task
 
     public function generateAction()
     {
+        $benchmarkStart = time();
+
         $output = $this->getOption('o');
         $dest = $this->getOption('d');
         $spec = $this->getOption('s');
@@ -68,6 +70,11 @@ class GeneratorTask extends \Vegas\Cli\Task
         $generator->setAdapterType($outputParts[1]);
 
         $generator->generate();
+
+        $benchmarkFinish = time();
+
+        $this->putSuccess('Done.');
+        $this->putText('Generated in: ' . ($benchmarkFinish - $benchmarkStart) . ' seconds');
     }
 }
  

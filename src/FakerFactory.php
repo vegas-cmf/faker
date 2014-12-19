@@ -25,7 +25,7 @@ class FakerFactory extends Factory
      *
      * @var array
      */
-    protected static $providersProxy = array();
+    protected static $providersProxy = [];
 
     /**
      * Prepares data providers defined in specification file
