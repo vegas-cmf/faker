@@ -37,7 +37,7 @@ abstract class Db extends OutputAbstract
      * @param array $data
      * @return mixed|void
      */
-    public function store(array $data = array())
+    public function store(array $data = [])
     {
         $this->model->writeAttributes($data);
         $this->model->save();

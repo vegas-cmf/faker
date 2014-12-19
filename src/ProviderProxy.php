@@ -72,7 +72,7 @@ class ProviderProxy
     {
         try {
             $reflectionClass = new \ReflectionClass($this->providerClassName);
-            return $reflectionClass->newInstanceArgs(array($faker));
+            return $reflectionClass->newInstanceArgs([$faker]);
         } catch (\ReflectionException $ex) {
             throw new UnableProviderInstantiateException($this->providerClassName);
         }
@@ -87,7 +87,7 @@ class ProviderProxy
     public function invoke(\Faker\Generator $faker)
     {
         return call_user_func_array(
-            array($faker, $this->providerFunction),
+            [$faker, $this->providerFunction],
             array_values($this->providerParameters)
         );
     }

@@ -27,7 +27,7 @@ class Csv extends File implements OutputTypeInterface
      * @param array $data
      * @return mixed|void
      */
-    public function store(array $data = array())
+    public function store(array $data = [])
     {
         fputcsv($this->handle, array_values($data), self::DELIMITER, '"');
     }

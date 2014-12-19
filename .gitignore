@@ -36,3 +36,5 @@ composer.phar
 composer.lock
 
 cache/
+
+tests/config.php

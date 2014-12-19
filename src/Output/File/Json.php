@@ -27,7 +27,7 @@ class Json extends File implements OutputTypeInterface
      * @param array $data
      * @return mixed|void
      */
-    public function store(array $data = array())
+    public function store(array $data = [])
     {
         $this->dataArray[] = $data;
     }

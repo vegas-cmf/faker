@@ -38,7 +38,7 @@ XML;
      * @param array $data
      * @return mixed|void
      */
-    public function store(array $data = array())
+    public function store(array $data = [])
     {
         $node = $this->handle->addChild('data');
         foreach ($data as $key => $value) {

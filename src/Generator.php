@@ -11,7 +11,6 @@
  */ 
 
 namespace Vegas\Tool\Faker;
-use Faker\Provider\Base;
 use Vegas\Tool\Faker\Exception\InvalidOutputAdapterException;
 use Vegas\Tool\Faker\Exception\InvalidSpecFileException;
 use Vegas\Tool\Faker\Exception\MissingAdapterException;
@@ -69,7 +68,7 @@ class Generator
     /**
      * @var array
      */
-    private $customProviders = array();
+    private $customProviders = [];
 
     /**
      * Name of output adapter
@@ -128,12 +127,12 @@ class Generator
      * Sets destination name for output
      * It can be a file path or database table/collection
      *
-     * @param $dest
+     * @param $destination
      * @return $this
      */
-    public function setDestination($dest)
+    public function setDestination($destination)
     {
-        $this->destination = $dest;
+        $this->destination = $destination;
 
         return $this;
     }
@@ -226,12 +225,9 @@ class Generator
 
         //generates data`
         for ($i = 0; $i < $this->count; $i++) {
-            $data = array();
+            $data = [];
             foreach ($spec as $key => $providerConfig) {
                 $providerProxy = ProviderProxyMap::get($key);
-                if (null == $providerProxy) {
-                    continue;
-                }
                 $data[$key] = $providerProxy->invoke($faker);
             }
 

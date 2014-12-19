@@ -47,7 +47,7 @@ abstract class OutputAbstract
      * @param array $data
      * @return mixed
      */
-    abstract public function store(array $data = array());
+    abstract public function store(array $data = []);
 
     /**
      * Finalizes data generation

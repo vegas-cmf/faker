@@ -26,7 +26,7 @@ class ProviderProxyMap
      *
      * @var array
      */
-    protected static $providersMap = array();
+    protected static $providersMap = [];
 
     /**
      * Adds new provider proxy identified by key
