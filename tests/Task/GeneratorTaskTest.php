@@ -2,7 +2,7 @@
 /**
  * This file is part of Vegas package
  *
- * @author Slawomir Zytko <slawomir.zytko@gmail.com>
+ * @author Slawomir Zytko <slawek@amsterdam-standard.pl>
  * @copyright Amsterdam Standard Sp. Z o.o.
  * @homepage http://vegas-cmf.github.io
  *
@@ -43,7 +43,7 @@ class GeneratorTaskTest extends \PHPUnit_Framework_TestCase
         $task->getDI()->set('dispatcher', $dispatcher);
 
         $task->beforeExecuteRoute();
-        $task->setOptions();
+        $task->setupOptions();
         $task->generateAction();
 
         $content = $task->getOutput();

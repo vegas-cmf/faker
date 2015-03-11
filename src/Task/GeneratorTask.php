@@ -2,7 +2,7 @@
 /**
  * This file is part of Vegas package
  *
- * @author Slawomir Zytko <slawomir.zytko@gmail.com>
+ * @author Slawomir Zytko <slawek@amsterdam-standard.pl>
  * @copyright Amsterdam Standard Sp. Z o.o.
  * @homepage http://vegas-cmf.github.io
  *
@@ -18,7 +18,7 @@ use Vegas\Cli\Task\Option;
 /**
  * Class GeneratorTask
  */
-class GeneratorTask extends \Vegas\Cli\Task
+class GeneratorTask extends \Vegas\Cli\TaskAbstract
 {
 
     /**
@@ -26,7 +26,7 @@ class GeneratorTask extends \Vegas\Cli\Task
      *
      * @return mixed
      */
-    public function setOptions()
+    public function setupOptions()
     {
         $action = new Action('generate', 'Generate fake data');
         //output adapter
